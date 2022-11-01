@@ -4,19 +4,23 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int grade[SIZE];
-	int score[SIZE];
-	
+	int a[SIZE]={1,2,3,4,5};
+	int b[SIZE]={1,2,3,4,5};
+	int flag_same=0;  //이벤트가 발생했을때 
 	int i;
 	
 	for(i=0;i<SIZE;i++){
-		grade[i]=rand()%100;
-		score[i]=grade[i];
+		if(a[i]==b[i]){
+			continue;
+		}
+		else if(a[i]!=b[i]){
+			flag_same=1;
+			printf("배열이 달라요");
+			break; 
+		}
 	}
-	
-	for(i=0;i<SIZE;i++){
-		printf("score[%d]=%d\n",i,score[i]);
-		printf("grade[%d]=%d\n",i,grade[i]);
-	}
+	if(flag_same==0){
+		printf("배열이 같아요");
+	} 
 	return 0;
 }
